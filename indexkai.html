@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Senior Systems Administrator & DevOps Engineer Portfolio - High-availability infrastructure and automation expert.">
+    <title>Your Name | DevOps & SysAdmin Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- DESIGN SYSTEM --- */
+        :root {
+            --bg: #030712;
+            --surface: #111827;
+            --border: #1f2937;
+            --text: #f9fafb;
+            --text-muted: #9ca3af;
+            --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --accent-solid: #8b5cf6;
+            --nav-blur: rgba(3, 7, 18, 0.8);
+        }
+
+        [data-theme="light"] {
+            --bg: #f8f9fa;
+            --surface: #ffffff;
+            --border: #e5e7eb;
+            --text: #111827;
+            --text-muted: #4b5563;
+            --nav-blur: rgba(248, 249, 250, 0.8);
+        }
+
+        /* --- BASE STYLES --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; transition: background 0.3s ease; overflow-x: hidden; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+        a { text-decoration: none; color: inherit; transition: 0.2s; }
+
+        /* --- NAVIGATION --- */
+        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: var(--nav-blur); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        .nav-content { height: 70px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 1.25rem; letter-spacing: -1px; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a:hover { color: var(--accent-solid); }
+        .theme-toggle { cursor: pointer; background: none; border: none; font-size: 1.2rem; color: var(--text); }
+
+        /* --- HERO --- */
+        .hero { height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; font-weight: 800; letter-spacing: -2px; }
+        .gradient-text { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin-bottom: 35px; }
+
+        /* --- BUTTONS --- */
+        .btn { padding: 12px 28px; border-radius: 8px; font-weight: 600; display: inline-block; }
+        .btn-primary { background: var(--accent-gradient); color: white; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4); }
+        .btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
+        .btn-secondary { border: 1px solid var(--border); background: var(--surface); }
+        .btn-secondary:hover { border-color: var(--accent-solid); }
+
+        /* --- SECTIONS --- */
+        section { padding: 100px 0; }
+        .section-header { margin-bottom: 50px; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
+        .section-header .line { width: 50px; height: 4px; background: var(--accent-gradient); border-radius: 2px; }
+
+        /* --- SKILLS GRID --- */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .skill-card { background: var(--surface); border: 1px solid var(--border); padding: 25px; border-radius: 12px; }
+        .skill-card h3 { font-size: 1rem; margin-bottom: 15px; color: var(--accent-solid); text-transform: uppercase; letter-spacing: 1px; }
+        .skill-list { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { background: var(--bg); border: 1px solid var(--border); padding: 5px 12px; border-radius: 6px; font-size: 0.85rem; }
+
+        /* --- EXPERIENCE --- */
+        .exp-item { margin-bottom: 40px; padding-left: 20px; border-left: 2px solid var(--border); position: relative; }
+        .exp-item::before { content: ''; position: absolute; left: -7px; top: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-solid); }
+        .exp-meta { display: flex; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; }
+        .exp-item h3 { font-size: 1.25rem; }
+        .exp-item span { color: var(--text-muted); font-size: 0.9rem; }
+        .exp-item ul { margin-top: 15px; padding-left: 20px; color: var(--text-muted); }
+        .exp-item li { margin-bottom: 8px; }
+
+        /* --- PROJECTS --- */
+        .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 30px; transition: 0.3s; }
+        .project-card:hover { border-color: var(--accent-solid); transform: translateY(-5px); }
+        .project-card h3 { margin-bottom: 15px; }
+        .project-card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; }
+        .result-badge { display: inline-block; background: rgba(139, 92, 246, 0.1); color: var(--accent-solid); padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600; }
+
+        /* --- CONTACT --- */
+        .contact-box { background: var(--accent-gradient); padding: 60px; border-radius: 20px; text-align: center; color: white; }
+        .contact-box h2 { font-size: 2.5rem; margin-bottom: 15px; }
+        .contact-box p { margin-bottom: 30px; opacity: 0.9; }
+        .contact-box .btn-secondary { background: white; color: black; border: none; }
+
+        /* --- FOOTER --- */
+        footer { padding: 50px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+
+        /* --- ANIMATIONS --- */
+        .reveal { opacity: 0; transform: translateY(20px); transition
