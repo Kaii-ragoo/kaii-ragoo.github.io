@@ -9,11 +9,32 @@
 </head>
 <body>
 
-    <nav>
-        <div class="container">
-            <strong style="font-size: 1.2rem;">KAI<span style="color:var(--accent)">.DEV</span></strong>
-        </div>
-    </nav>
+ <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Mouri</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
     <div class="container">
         <header>
@@ -95,7 +116,15 @@
         <footer>
             &copy; 2026 Kaii-ragoo | Built with code, hosted on GitHub.
         </footer>
+        <script>
     </div>
+  const navLinks = document.querySelectorAll('.nav-link');
 
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
 </body>
 </html>
